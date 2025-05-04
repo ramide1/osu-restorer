@@ -1,2 +1,2 @@
-# osu-restorewr
+# osu-restorer
 Osu! beatmaps restorer
