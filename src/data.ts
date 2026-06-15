@@ -21,9 +21,10 @@ const loadData = (file: string) => {
 
 const getBeatmaps = async (userId: number, limit: number, offset: number = 0) => {
     try {
-        const response = await fetch('https://osu.ppy.sh/users/' + userId + '/beatmapsets/most_played?limit=' + limit + '&offset=' + offset, { method: 'GET' });
+        const response: any = await fetch('https://osu.ppy.sh/users/' + userId + '/beatmapsets/most_played?limit=' + limit + '&offset=' + offset, { method: 'GET' });
         if (!response.ok) throw new Error('Response was not ok');
-        return await response.json();
+        const responseData: any[] = await response.json();
+        return responseData;
     } catch (error) {
         return false;
     }
